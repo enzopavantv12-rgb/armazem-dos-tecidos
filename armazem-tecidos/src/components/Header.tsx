@@ -70,17 +70,11 @@ export default function Header() {
             WhatsApp
           </a>
 
-          <svg
-            viewBox="0 0 28 20"
-            role="img"
-            aria-label="Idioma: português (Brasil)"
+          <img
+            src="./icones_social/brasilia.svg"
+            alt="Idioma: português (Brasil)"
             className="hidden md:block h-5 w-7 rounded-sm shadow-sm"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <rect width="28" height="20" fill="#009B3A" />
-            <polygon points="14,2 26,10 14,18 2,10" fill="#FEDF00" />
-            <circle cx="14" cy="10" r="4.2" fill="#002776" />
-          </svg>
+          />
 
           <button
             className={`md:hidden p-2 transition-colors duration-500 focus:outline-none focus:ring-2 focus:ring-ambar ${
