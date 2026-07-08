@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react'
 import { Menu, X } from 'lucide-react'
 import { motion, AnimatePresence } from 'framer-motion'
+import { AnimatedThemeToggle } from './ui/AnimatedThemeToggle'
 
 const WA_URL = 'https://wa.me/5531998338543?text=Ol%C3%A1!%20Vim%20pelo%20site%20e%20quero%20comprar%20tecidos%20no%20atacado.'
 
@@ -59,11 +60,14 @@ export default function Header() {
         </nav>
 
         <div className="flex items-center gap-3">
+          <AnimatedThemeToggle
+            className={`h-10 w-10 ${scrolled ? 'border-carvao/20 text-carvao hover:bg-carvao/5' : 'border-white/40 text-white hover:bg-white/10'}`}
+          />
           <a
             href={WA_URL}
             target="_blank"
             rel="noopener noreferrer"
-            className="hidden md:flex items-center gap-2 bg-ambar text-carvao text-sm font-medium px-4 py-2 rounded-full hover:bg-ambar/90 transition-colors focus:outline-none focus:ring-2 focus:ring-ambar focus:ring-offset-2"
+            className="hidden md:flex items-center gap-2 bg-ambar text-on-ambar text-sm font-medium px-4 py-2 rounded-full hover:bg-ambar/90 transition-colors focus:outline-none focus:ring-2 focus:ring-ambar focus:ring-offset-2"
             aria-label="Falar no WhatsApp"
           >
             <img src="./icones_social/whatsapp%20(1).svg" alt="" aria-hidden="true" className="w-[15px] h-[15px]" />
@@ -116,7 +120,7 @@ export default function Header() {
                 href={WA_URL}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center justify-center gap-2 bg-ambar text-carvao font-medium px-4 py-3 w-full rounded-full hover:bg-ambar/90 transition-colors"
+                className="flex items-center justify-center gap-2 bg-ambar text-on-ambar font-medium px-4 py-3 w-full rounded-full hover:bg-ambar/90 transition-colors"
                 aria-label="Falar no WhatsApp"
                 onClick={() => setOpen(false)}
               >

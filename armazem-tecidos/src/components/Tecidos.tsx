@@ -34,14 +34,14 @@ const categories: Category[] = [
     name: 'Viscose',
     sub: 'Diversas composições',
     desc: 'Leveza e caimento para peças femininas, vestidos e coleções com volume.',
-    photo: '',
+    photo: './img/viscose.png',
     color: 'bg-areia',
   },
   {
     name: 'Retalhos',
     sub: 'Por KG',
     desc: 'Aproveitamento máximo. Retalhos de qualidade para artesanato, patchwork e costura criativa.',
-    photo: '',
+    photo: './img/tecidos%202.png',
     color: 'bg-petroleo-agua',
   },
 ]

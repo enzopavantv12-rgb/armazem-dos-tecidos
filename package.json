@@ -1,0 +1,10 @@
+{
+  "name": "armazem-dos-tecidos-workspace",
+  "private": true,
+  "scripts": {
+    "dev": "npm run dev --prefix armazem-tecidos",
+    "build": "npm run build --prefix armazem-tecidos",
+    "lint": "npm run lint --prefix armazem-tecidos",
+    "preview": "npm run preview --prefix armazem-tecidos"
+  }
+}

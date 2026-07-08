@@ -6,7 +6,7 @@ const WA_URL =
 
 export default function Diferenciais() {
   return (
-    <section className="bg-branco-quente py-24 lg:py-32" id="diferenciais">
+    <section className="py-24 lg:py-32" id="diferenciais">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
 
         {/* Cabeçalho centralizado */}

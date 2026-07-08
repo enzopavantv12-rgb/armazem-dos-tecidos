@@ -1,7 +1,8 @@
 {
   "permissions": {
     "allow": [
-      "Bash(npm run *)"
+      "Bash(npm run *)",
+      "PowerShell(Rename-Item -Path \"c:\\\\Users\\\\Enzo\\\\Documents\\\\armazem_dos_tecidos\\\\armazem-tecidos\\\\public\\\\img\\\\download \\(2\\).gif\" -NewName \"armazem-loop.gif\")"
     ]
   }
 }

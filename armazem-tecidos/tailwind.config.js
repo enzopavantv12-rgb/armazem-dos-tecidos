@@ -1,18 +1,21 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
+  darkMode: 'class',
   content: ['./index.html', './src/**/*.{js,ts,jsx,tsx}'],
   theme: {
     extend: {
       colors: {
+        // RGB-channel format enables opacity modifiers (text-carvao/60) AND dark-mode switching via CSS vars
         petroleo: {
-          DEFAULT: '#0E5A66',
-          fundo: '#093E47',
-          agua: '#E6F0F1',
+          DEFAULT: 'rgb(var(--petroleo-ch) / <alpha-value>)',
+          fundo: 'rgb(var(--petroleo-fundo-ch) / <alpha-value>)',
+          agua: 'rgb(var(--petroleo-agua-ch) / <alpha-value>)',
         },
-        'branco-quente': '#FAF8F3',
-        carvao: '#16201F',
-        ambar: '#E6A02E',
-        areia: '#E7DECF',
+        'branco-quente': 'rgb(var(--branco-quente-ch) / <alpha-value>)',
+        carvao: 'rgb(var(--carvao-ch) / <alpha-value>)',
+        ambar: 'rgb(var(--ambar-ch) / <alpha-value>)',
+        areia: 'rgb(var(--areia-ch) / <alpha-value>)',
+        'on-ambar': 'rgb(var(--on-ambar-ch) / <alpha-value>)',
       },
       fontFamily: {
         sans: ['Satoshi', 'system-ui', 'sans-serif'],
@@ -38,4 +41,3 @@ module.exports = {
   },
   plugins: [],
 }
-

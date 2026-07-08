@@ -27,7 +27,7 @@ export default function SobreNos() {
 
   return (
     <section
-      className="relative overflow-hidden bg-branco-quente"
+      className="relative overflow-hidden"
       id="sobre"
       aria-label="Sobre o Armazém dos Tecidos"
     >
@@ -52,10 +52,10 @@ export default function SobreNos() {
           transition={{ duration: 0.85, ease: [0.25, 0.1, 0.25, 1] }}
           className="lg:col-span-5 flex justify-center items-center"
         >
-          <div className="w-full max-w-[460px] aspect-square rounded-full overflow-hidden lg:ml-auto">
+          <div className="w-full max-w-[460px] rounded-2xl overflow-hidden lg:ml-auto">
             <img
-              src="./img/galeria-tricoline.jpg"
-              alt="Rolos de tecido empilhados no galpão do Armazém dos Tecidos, Belo Horizonte"
+              src="./img/Foto equipe armazém.png"
+              alt="Equipe do Armazém dos Tecidos em Belo Horizonte"
               className="w-full h-full object-cover object-center"
               loading="lazy"
             />

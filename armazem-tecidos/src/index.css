@@ -3,13 +3,46 @@
 @tailwind utilities;
 
 :root {
-  --petroleo: #0E5A66;
+  /* Hex — para var() direto em style props */
+  --petroleo: #024D62;
   --petroleo-fundo: #093E47;
   --petroleo-agua: #E6F0F1;
   --branco-quente: #FAF8F3;
   --carvao: #16201F;
   --ambar: #E6A02E;
   --areia: #E7DECF;
+  --on-ambar: #16201F;
+
+  /* RGB channels — para classes Tailwind com opacity (text-carvao/60, bg-petroleo/10…) */
+  --petroleo-ch: 2 77 98;
+  --petroleo-fundo-ch: 9 62 71;
+  --petroleo-agua-ch: 230 240 241;
+  --branco-quente-ch: 250 248 243;
+  --carvao-ch: 22 32 31;
+  --ambar-ch: 230 160 46;
+  --areia-ch: 231 222 207;
+  --on-ambar-ch: 22 32 31;
+}
+
+/* Dark mode: redefine tokens — todos os componentes viram automaticamente */
+.dark {
+  --petroleo: #024D62;
+  --petroleo-fundo: #0A2E35;
+  --petroleo-agua: #15272C;
+  --branco-quente: #0E1416;
+  --carvao: #ECE7DC;
+  --ambar: #E6A02E;
+  --areia: #1E2629;
+  --on-ambar: #16201F;
+
+  --petroleo-ch: 2 77 98;
+  --petroleo-fundo-ch: 10 46 53;
+  --petroleo-agua-ch: 21 39 44;
+  --branco-quente-ch: 14 20 22;
+  --carvao-ch: 236 231 220;
+  --ambar-ch: 230 160 46;
+  --areia-ch: 30 38 41;
+  --on-ambar-ch: 22 32 31;
 }
 
 @layer base {
@@ -18,8 +51,8 @@
   }
 
   body {
-    background-color: #FAF8F3;
-    color: #16201F;
+    background-color: var(--branco-quente);
+    color: var(--carvao);
     font-family: 'Satoshi', system-ui, sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
@@ -37,6 +70,84 @@
     color: #16201F;
   }
 }
+
+/* ── Hero Glass Card Animations ──────────────────────────────────────── */
+
+@keyframes card-enter {
+  from { opacity: 0; transform: translateY(28px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+@keyframes glass-float-a {
+  0%, 100% { transform: translateY(0px); }
+  50%       { transform: translateY(-10px); }
+}
+@keyframes glass-float-b {
+  0%, 100% { transform: translateY(0px); }
+  50%       { transform: translateY(-7px); }
+}
+@keyframes shimmer-sweep {
+  0%   { transform: translateX(-120%) skewX(-20deg); }
+  100% { transform: translateX(260%) skewX(-20deg); }
+}
+
+.hero-card-wrap-a {
+  animation: card-enter 0.8s cubic-bezier(0.22, 1, 0.36, 1) 0.2s both;
+}
+.hero-card-wrap-b {
+  animation: card-enter 0.8s cubic-bezier(0.22, 1, 0.36, 1) 0.42s both;
+}
+.hero-card-float-a {
+  animation: glass-float-a 6s ease-in-out infinite;
+}
+.hero-card-float-b {
+  animation: glass-float-b 7.5s ease-in-out 1.2s infinite;
+}
+
+.hero-card {
+  transition: box-shadow 0.45s ease, border-color 0.45s ease;
+}
+.hero-card:hover {
+  box-shadow:
+    0 24px 64px rgba(0, 0, 0, 0.4),
+    inset 0 1px 1px rgba(255, 255, 255, 0.65),
+    inset 0 -1px 1px rgba(255, 255, 255, 0.15);
+  border-color: rgba(255, 255, 255, 0.45);
+}
+
+.hero-card-sheen {
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  overflow: hidden;
+  pointer-events: none;
+}
+.hero-card-sheen::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 45%;
+  height: 100%;
+  background: linear-gradient(
+    to right,
+    transparent,
+    rgba(255, 255, 255, 0.5) 50%,
+    transparent
+  );
+  transform: skewX(-20deg) translateX(-200%);
+}
+.hero-card:hover .hero-card-sheen::after {
+  animation: shimmer-sweep 0.65s ease-out forwards;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-card-wrap-a,
+  .hero-card-wrap-b  { animation: none; opacity: 1; }
+  .hero-card-float-a,
+  .hero-card-float-b { animation: none; }
+}
+
+/* ─────────────────────────────────────────────────────────────────────── */
 
 @layer utilities {
   .trama {

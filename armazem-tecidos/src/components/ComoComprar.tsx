@@ -78,72 +78,59 @@ export default function ComoComprar() {
             </AnimatedSection>
           </div>
 
-          {/* Address card + info */}
-          <div className="space-y-4" id="contato">
+          {/* Card de endereço + mapa integrado */}
+          <div>
             <AnimatedSection delay={0.1}>
-              <div className="bg-petroleo-fundo trama text-white p-8">
-                <p className="font-mono text-[11px] text-white/35 tracking-[0.2em] uppercase mb-6">Localização</p>
-                <div className="space-y-4">
-                  <div className="flex gap-3 items-start">
-                    <MapPin size={16} className="text-ambar mt-0.5 shrink-0" aria-hidden="true" />
-                    <div>
-                      <p className="text-white text-sm font-medium">R. Nhanduti, 232</p>
-                      <p className="text-white/60 text-sm">Caiçara, Belo Horizonte — MG</p>
+              <div className="overflow-hidden rounded-2xl border border-carvao/10 shadow-sm">
+
+                {/* Endereço */}
+                <div className="bg-petroleo-fundo trama text-white px-8 py-7">
+                  <p className="font-mono text-[11px] text-white/35 tracking-[0.2em] uppercase mb-5">Localização</p>
+                  <div className="space-y-3">
+                    <div className="flex gap-3 items-start">
+                      <MapPin size={16} className="text-ambar mt-0.5 shrink-0" aria-hidden="true" />
+                      <div>
+                        <p className="text-white text-sm font-medium">R. Nhanduti, 232</p>
+                        <p className="text-white/60 text-sm">Caiçara, Belo Horizonte — MG</p>
+                      </div>
+                    </div>
+                    <div className="flex gap-3 items-start">
+                      <Phone size={16} className="text-ambar mt-0.5 shrink-0" aria-hidden="true" />
+                      <a href="https://wa.me/5531998338543" className="text-white text-sm hover:text-ambar transition-colors">
+                        (31) 99833-8543
+                      </a>
+                    </div>
+                    <div className="flex gap-3 items-start">
+                      <Package size={16} className="text-ambar mt-0.5 shrink-0" aria-hidden="true" />
+                      <p className="text-white/60 text-sm">Atacado por KG, retalhos e envio para todo o Brasil</p>
                     </div>
                   </div>
-                  <div className="flex gap-3 items-start">
-                    <Phone size={16} className="text-ambar mt-0.5 shrink-0" aria-hidden="true" />
-                    <a href="https://wa.me/5531998338543" className="text-white text-sm hover:text-ambar transition-colors">
-                      (31) 99833-8543
+                  <div className="mt-6 pt-5 border-t border-white/10 flex items-center justify-between">
+                    <a
+                      href={MAPS_URL}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-1.5 text-ambar text-sm font-medium hover:underline focus:outline-none focus-visible:ring-2 focus-visible:ring-ambar"
+                      aria-label="Abrir no Google Maps"
+                    >
+                      Abrir no Google Maps
+                      <MapPin size={13} aria-hidden="true" />
                     </a>
                   </div>
-                  <div className="flex gap-3 items-start">
-                    <Package size={16} className="text-ambar mt-0.5 shrink-0" aria-hidden="true" />
-                    <p className="text-white/60 text-sm">Atacado por KG, retalhos e envio para todo o Brasil</p>
-                  </div>
                 </div>
-                <div className="mt-8 pt-6 border-t border-white/10">
-                  <a
-                    href={MAPS_URL}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-flex items-center gap-2 text-ambar text-sm font-medium hover:underline focus:outline-none focus:ring-2 focus:ring-ambar"
-                    aria-label="Ver no Google Maps"
-                  >
-                    Ver no Google Maps
-                    <span aria-hidden="true">↗</span>
-                  </a>
-                </div>
-              </div>
-            </AnimatedSection>
 
-            {/* Map placeholder */}
-            <AnimatedSection delay={0.2}>
-              <a
-                href={MAPS_URL}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="block relative aspect-video bg-areia overflow-hidden group focus:outline-none focus:ring-2 focus:ring-petroleo"
-                aria-label="Abrir localização no Google Maps: R. Nhanduti, 232, Caiçara, Belo Horizonte"
-              >
-                {/* Stylized map placeholder */}
-                <div className="absolute inset-0 flex flex-col items-center justify-center gap-2 group-hover:bg-petroleo/5 transition-colors">
-                  <MapPin size={28} className="text-petroleo/50" aria-hidden="true" />
-                  <p className="font-mono text-[11px] text-carvao/50 tracking-[0.15em] uppercase text-center">
-                    R. Nhanduti, 232<br />Caiçara · BH
-                  </p>
-                  <p className="text-xs text-petroleo font-medium group-hover:underline mt-1">Ver no Google Maps</p>
+                {/* Google Maps embed */}
+                <div className="relative h-72 w-full">
+                  <iframe
+                    src="https://maps.google.com/maps?q=R.+Nhanduti%2C+232%2C+Cai%C3%A7ara%2C+Belo+Horizonte%2C+MG%2C+Brazil&output=embed&z=16&hl=pt-BR"
+                    title="Localização do Armazém dos Tecidos — R. Nhanduti, 232, Caiçara, Belo Horizonte"
+                    loading="lazy"
+                    allowFullScreen
+                    className="absolute inset-0 h-full w-full border-0"
+                  />
                 </div>
-                {/* Decorative grid lines */}
-                <svg className="absolute inset-0 w-full h-full opacity-10" aria-hidden="true">
-                  <defs>
-                    <pattern id="mapgrid" width="40" height="40" patternUnits="userSpaceOnUse">
-                      <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#0E5A66" strokeWidth="0.5"/>
-                    </pattern>
-                  </defs>
-                  <rect width="100%" height="100%" fill="url(#mapgrid)" />
-                </svg>
-              </a>
+
+              </div>
             </AnimatedSection>
           </div>
         </div>

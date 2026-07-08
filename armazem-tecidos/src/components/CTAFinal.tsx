@@ -33,7 +33,7 @@ export default function CTAFinal() {
             href={WA_URL}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-3 bg-ambar text-carvao font-medium px-9 py-4 text-base hover:bg-ambar/90 transition-colors focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-petroleo-fundo"
+            className="inline-flex items-center gap-3 bg-ambar text-on-ambar font-medium px-9 py-4 text-base hover:bg-ambar/90 transition-colors focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-petroleo-fundo"
             aria-label="Falar no WhatsApp do Armazém dos Tecidos"
           >
             <img src="./icones_social/whatsapp%20(1).svg" alt="" aria-hidden="true" className="w-5 h-5" />
