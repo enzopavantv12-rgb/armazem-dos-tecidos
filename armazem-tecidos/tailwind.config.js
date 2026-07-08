@@ -5,6 +5,14 @@ module.exports = {
   theme: {
     extend: {
       colors: {
+        primaria: 'rgb(var(--primaria-ch) / <alpha-value>)',
+        'primaria-escura': 'rgb(var(--primaria-escura-ch) / <alpha-value>)',
+        'primaria-clara': 'rgb(var(--primaria-clara-ch) / <alpha-value>)',
+        secundaria: 'rgb(var(--secundaria-ch) / <alpha-value>)',
+        destaque: 'rgb(var(--destaque-ch) / <alpha-value>)',
+        apoio: 'rgb(var(--apoio-ch) / <alpha-value>)',
+        branco: 'rgb(var(--branco-ch) / <alpha-value>)',
+
         // RGB-channel format enables opacity modifiers (text-carvao/60) AND dark-mode switching via CSS vars
         petroleo: {
           DEFAULT: 'rgb(var(--petroleo-ch) / <alpha-value>)',
@@ -18,9 +26,9 @@ module.exports = {
         'on-ambar': 'rgb(var(--on-ambar-ch) / <alpha-value>)',
       },
       fontFamily: {
-        sans: ['Satoshi', 'system-ui', 'sans-serif'],
-        display: ['Satoshi', 'sans-serif'],
-        body: ['Inter', 'system-ui', 'sans-serif'],
+        sans: ['Montserrat', 'Poppins', 'sans-serif'],
+        display: ['Montserrat', 'Poppins', 'sans-serif'],
+        body: ['Montserrat', 'Inter', 'sans-serif'],
         mono: ['"DM Mono"', 'ui-monospace', 'monospace'],
       },
       animation: {

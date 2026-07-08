@@ -34,13 +34,20 @@ export default function Header() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between h-16">
 
         <a href="#" className="flex items-center" aria-label="ARMAZEM TECIDOS — página inicial">
-          <span
-            className={`font-display font-bold text-lg md:text-xl tracking-tight leading-none transition-colors duration-500 ${
-              scrolled ? 'text-petroleo' : 'text-white'
+          <img
+            src="./img/logos/Logo-armazem-branca.png"
+            alt="Armazém dos Tecidos"
+            className={`h-8 w-auto transition-all duration-300 ${
+              scrolled ? 'hidden dark:block' : 'block'
             }`}
-          >
-            ARMAZEM <span className="text-ambar">|</span> TECIDOS
-          </span>
+          />
+          <img
+            src="./img/logos/Logo-armazem-preta.png"
+            alt="Armazém dos Tecidos"
+            className={`h-8 w-auto transition-all duration-300 ${
+              scrolled ? 'block dark:hidden' : 'hidden'
+            }`}
+          />
         </a>
 
         <nav className="hidden md:flex items-center gap-7" aria-label="Navegação principal">

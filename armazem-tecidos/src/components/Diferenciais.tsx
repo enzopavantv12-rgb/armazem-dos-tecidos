@@ -1,148 +1,113 @@
-import { ChevronRight } from 'lucide-react'
-import AnimatedSection from './AnimatedSection'
+import { motion } from 'framer-motion'
+import { useRef } from 'react'
+import { useInView } from 'framer-motion'
 
-const WA_URL =
-  'https://wa.me/5531998338543?text=Ol%C3%A1!%20Vim%20pelo%20site%20e%20quero%20comprar%20tecidos%20no%20atacado.'
+const diferenciais = [
+  {
+    n: '01',
+    title: 'Preço competitivo de atacado',
+    desc: 'Condições que ajudam lojistas e confecções a aumentarem sua margem de lucro.',
+  },
+  {
+    n: '02',
+    title: 'Qualidade comprovada',
+    desc: 'Tecidos selecionados para oferecer excelente acabamento, durabilidade e satisfação ao cliente final.',
+  },
+  {
+    n: '03',
+    title: 'Pronta entrega',
+    desc: 'Estoque próprio para atender pedidos com rapidez e agilidade na reposição.',
+  },
+  {
+    n: '04',
+    title: 'Envio para todo o Brasil',
+    desc: 'Atendemos clientes de todos os estados com logística eficiente e suporte durante todo o processo.',
+  },
+  {
+    n: '05',
+    title: 'Mais de 30 anos de experiência',
+    desc: 'Uma trajetória construída com confiança, credibilidade e relacionamento de longo prazo.',
+  },
+  {
+    n: '06',
+    title: 'Atendimento próximo e consultivo',
+    desc: 'Nossa equipe ajuda o cliente a encontrar as melhores opções para o seu negócio.',
+  },
+]
+
+const stats = [
+  { value: '+30', label: 'anos de mercado' },
+  { value: '35', label: 'colaboradores' },
+  { value: '27', label: 'estados atendidos' },
+  { value: '+10 mil', label: 'metros/mês no maior cliente ativo' },
+]
 
 export default function Diferenciais() {
+  const containerRef = useRef<HTMLDivElement>(null)
+  const isInView = useInView(containerRef, { once: true, amount: 0.1 })
+
   return (
-    <section className="py-24 lg:py-32" id="diferenciais">
-      <div className="mx-auto max-w-7xl px-6 lg:px-8">
-
-        {/* Cabeçalho centralizado */}
-        <AnimatedSection>
-          <div className="mx-auto mb-16 max-w-3xl text-center">
-            <p className="font-mono text-[11px] text-petroleo tracking-[0.22em] uppercase mb-4">
-              Por que comprar aqui
-            </p>
-            <h2
-              className="font-display font-bold text-carvao uppercase leading-tight"
-              style={{ fontSize: 'clamp(1.9rem, 3.5vw, 3rem)' }}
-            >
-              O armazém para quem compra com seriedade
-            </h2>
-          </div>
-        </AnimatedSection>
-
-        {/* Bento: card destaque (col 1) + grade de diferenciais (col 2–3) */}
-        <div className="grid grid-cols-1 gap-6 lg:grid-cols-3">
-
-          {/* CARD DESTAQUE — Atendimento direto (tem CTA) */}
-          <AnimatedSection
-            className="flex flex-col rounded-[32px] bg-areia overflow-hidden"
-            delay={0.05}
-          >
-            {/* Bloco de texto: padding próprio, a imagem fica fora dele */}
-            <div className="p-8 lg:p-10">
-              <h3
-                className="font-display font-bold text-carvao mb-4"
-                style={{ fontSize: 'clamp(1.6rem, 2.5vw, 2.2rem)' }}
-              >
-                Atendimento direto
-              </h3>
-              <p className="font-body text-carvao/65 text-base leading-relaxed mb-8">
-                Fale direto com quem conhece cada rolo do armazém. Atendimento pelo WhatsApp, sem intermediários.
-              </p>
-
-              {/* CTA existente — pill */}
-              <a
-                href={WA_URL}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 rounded-full bg-ambar text-carvao font-medium px-6 py-3 text-sm hover:bg-ambar/90 transition-colors focus:outline-none focus:ring-2 focus:ring-ambar focus:ring-offset-2 focus:ring-offset-areia"
-                aria-label="Falar no WhatsApp do Armazém dos Tecidos"
-              >
-                <img
-                  src="./icones_social/whatsapp%20(1).svg"
-                  alt=""
-                  aria-hidden="true"
-                  className="w-4 h-4"
-                />
-                Falar no WhatsApp
-              </a>
-            </div>
-
-            {/* Imagem: sangra até as bordas; tl arredondado igual ao card; tr reto; bl+br pelo overflow-hidden do card */}
-            <img
-              src="./img/galeria-brim.jpg"
-              alt="Tecidos no galpão do Armazém dos Tecidos, Belo Horizonte"
-              className="w-full flex-1 min-h-[280px] object-cover rounded-tl-[32px]"
-              loading="lazy"
-            />
-          </AnimatedSection>
-
-          {/* GRADE 2×2 — 4 diferenciais, items-start elimina o esticamento */}
-          <div className="grid grid-cols-1 gap-x-12 gap-y-10 sm:grid-cols-2 items-start lg:col-span-2">
-
-            {/* 01 — Atacado por KG */}
-            <AnimatedSection className="p-1" delay={0.1}>
-              <h3 className="font-display font-semibold text-carvao text-xl mb-3">
-                Atacado por KG
-              </h3>
-              <p className="font-body text-carvao/65 text-sm leading-relaxed mb-4">
-                Compre na quantidade certa para o seu negócio. Pedidos por KG com preço de atacado de verdade, sem franquia mínima por item e sem pagar a mais por volume.
-              </p>
-              <a
-                href="#como-comprar"
-                className="inline-flex items-center gap-1 text-sm font-medium text-petroleo hover:text-petroleo-fundo transition-colors"
-              >
-                Saiba mais <ChevronRight size={15} aria-hidden="true" />
-              </a>
-            </AnimatedSection>
-
-            {/* 02 — Variedade de linhas */}
-            <AnimatedSection className="p-1" delay={0.15}>
-              <h3 className="font-display font-semibold text-carvao text-xl mb-3">
-                Variedade de linhas
-              </h3>
-              <p className="font-body text-carvao/65 text-sm leading-relaxed mb-4">
-                Tricoline, viscose, malha, brim e retalhos, nacionais e importados. Variedade pra atender confecção, lojista e ateliê, tudo no mesmo galpão.
-              </p>
-              <a
-                href="#tecidos"
-                className="inline-flex items-center gap-1 text-sm font-medium text-petroleo hover:text-petroleo-fundo transition-colors"
-              >
-                Saiba mais <ChevronRight size={15} aria-hidden="true" />
-              </a>
-            </AnimatedSection>
-
-            {/* 03 — Envio para todo o Brasil: único bloco com fundo */}
-            <AnimatedSection
-              className="rounded-3xl bg-petroleo-agua p-7"
-              delay={0.2}
-            >
-              <h3 className="font-display font-semibold text-carvao text-xl mb-3">
-                Envio para todo o Brasil
-              </h3>
-              <p className="font-body text-carvao/65 text-sm leading-relaxed mb-4">
-                Do nosso galpão em Belo Horizonte direto para qualquer estado do país. Cuidamos da expedição com agilidade pra sua compra chegar onde você estiver.
-              </p>
-              <a
-                href="#como-comprar"
-                className="inline-flex items-center gap-1 text-sm font-medium text-petroleo hover:text-petroleo-fundo transition-colors"
-              >
-                Saiba mais <ChevronRight size={15} aria-hidden="true" />
-              </a>
-            </AnimatedSection>
-
-            {/* 04 — Pronta entrega */}
-            <AnimatedSection className="p-1" delay={0.25}>
-              <h3 className="font-display font-semibold text-carvao text-xl mb-3">
-                Pronta entrega
-              </h3>
-              <p className="font-body text-carvao/65 text-sm leading-relaxed mb-4">
-                Estoque próprio no galpão, sem depender de terceiros. Seu pedido sai rápido, sem espera e sem aquela promessa de prazo que não se cumpre.
-              </p>
-              <a
-                href="#como-comprar"
-                className="inline-flex items-center gap-1 text-sm font-medium text-petroleo hover:text-petroleo-fundo transition-colors"
-              >
-                Saiba mais <ChevronRight size={15} aria-hidden="true" />
-              </a>
-            </AnimatedSection>
-
-          </div>
+    <section className="py-24 lg:py-32 bg-secundaria/15 dark:bg-secundaria/5" id="diferenciais">
+      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8" ref={containerRef}>
+        
+        {/* Cabeçalho centralizado com traço abaixo estilo Cataguases */}
+        <div className="mx-auto mb-20 max-w-3xl text-center flex flex-col items-center">
+          <span className="font-mono text-[11px] text-destaque tracking-[0.25em] uppercase mb-4 block">
+            Diferenciais
+          </span>
+          <h2 className="font-sans font-bold text-3xl md:text-4xl lg:text-[42px] text-primaria uppercase leading-tight pb-6 relative after:content-[''] after:absolute after:bottom-0 after:left-1/2 after:-translate-x-1/2 after:w-[200px] after:h-[2px] after:bg-destaque">
+            Por que escolher a Armazém
+          </h2>
         </div>
+
+        {/* Grid de diferenciais numerado */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {diferenciais.map((item, i) => (
+            <motion.div
+              key={item.n}
+              initial={{ opacity: 0, y: 30 }}
+              animate={isInView ? { opacity: 1, y: 0 } : {}}
+              transition={{ duration: 0.6, delay: i * 0.08 }}
+              className="bg-white dark:bg-branco p-8 rounded-[24px] border border-black/5 hover:border-destaque/30 shadow-sm hover:shadow-md transition-all duration-300 relative overflow-hidden group"
+            >
+              {/* Número grande itálico serif-like de apoio */}
+              <span className="font-sans italic font-bold text-5xl md:text-6xl text-destaque/20 group-hover:text-destaque/30 transition-colors duration-300 mb-6 block">
+                {item.n}.
+              </span>
+              <h3 className="font-sans font-bold text-lg md:text-xl text-primaria mb-3">
+                {item.title}
+              </h3>
+              <p className="font-body text-sm text-apoio leading-relaxed">
+                {item.desc}
+              </p>
+            </motion.div>
+          ))}
+        </div>
+
+        {/* Barra de números/estatísticas */}
+        <motion.div
+          initial={{ opacity: 0, y: 40 }}
+          animate={isInView ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.8, delay: 0.4 }}
+          className="bg-primaria text-white py-12 md:py-16 px-6 md:px-12 rounded-[32px] mt-16 md:mt-24 shadow-2xl relative overflow-hidden flex flex-col justify-center items-center"
+        >
+          {/* Trama de fundo sutil */}
+          <div className="absolute inset-0 trama opacity-20 pointer-events-none" />
+          
+          <div className="relative z-10 w-full grid grid-cols-2 lg:grid-cols-4 gap-8 md:gap-12 text-center divide-y lg:divide-y-0 lg:divide-x divide-white/10">
+            {stats.map((stat, i) => (
+              <div key={i} className={`flex flex-col items-center justify-center p-4 ${i >= 2 ? 'pt-8 lg:pt-4' : 'pt-4'}`}>
+                <span className="font-sans font-bold text-3xl md:text-4xl lg:text-5xl text-destaque mb-3 leading-none block">
+                  {stat.value}
+                </span>
+                <span className="font-sans text-xs md:text-sm font-medium uppercase tracking-wider text-white/80 max-w-[200px]">
+                  {stat.label}
+                </span>
+              </div>
+            ))}
+          </div>
+        </motion.div>
+
       </div>
     </section>
   )

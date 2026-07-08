@@ -9,9 +9,18 @@ export default function Footer() {
 
           {/* Brand */}
           <div>
-            <p className="font-display font-bold text-white text-lg mb-3 leading-tight">
-              ARMAZEM <span className="text-ambar">|</span> TECIDOS
-            </p>
+            <div className="mb-4">
+              <img
+                src="./img/logos/Logo-armazem-branca.png"
+                alt="Armazém dos Tecidos"
+                className="h-8 w-auto hidden dark:block"
+              />
+              <img
+                src="./img/logos/Logo-armazem-preta.png"
+                alt="Armazém dos Tecidos"
+                className="h-8 w-auto block dark:hidden"
+              />
+            </div>
             <p className="text-white/45 text-sm leading-relaxed">
               Atacado de tecidos em Belo Horizonte.<br />
               Qualidade e confiança para suas compras.

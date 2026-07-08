@@ -3,46 +3,79 @@
 @tailwind utilities;
 
 :root {
-  /* Hex — para var() direto em style props */
-  --petroleo: #024D62;
-  --petroleo-fundo: #093E47;
-  --petroleo-agua: #E6F0F1;
-  --branco-quente: #FAF8F3;
-  --carvao: #16201F;
-  --ambar: #E6A02E;
-  --areia: #E7DECF;
-  --on-ambar: #16201F;
+  /* Brand Tokens */
+  --primaria: #1F3A5F;
+  --primaria-escura: #142338;
+  --primaria-clara: #3E5C87;
+  --secundaria: #D9D2C3;
+  --destaque: #D68A2E;
+  --apoio: #4A4A4A;
+  --branco: #FFFFFF;
 
-  /* RGB channels — para classes Tailwind com opacity (text-carvao/60, bg-petroleo/10…) */
-  --petroleo-ch: 2 77 98;
-  --petroleo-fundo-ch: 9 62 71;
-  --petroleo-agua-ch: 230 240 241;
-  --branco-quente-ch: 250 248 243;
-  --carvao-ch: 22 32 31;
-  --ambar-ch: 230 160 46;
-  --areia-ch: 231 222 207;
-  --on-ambar-ch: 22 32 31;
+  --primaria-ch: 31 58 95;
+  --primaria-escura-ch: 20 35 56;
+  --primaria-clara-ch: 62 92 135;
+  --secundaria-ch: 217 210 195;
+  --destaque-ch: 214 138 46;
+  --apoio-ch: 74 74 74;
+  --branco-ch: 255 255 255;
+
+  /* Legacy Mappings for Retrocompatibility */
+  --petroleo: var(--primaria);
+  --petroleo-fundo: var(--primaria);
+  --petroleo-agua: var(--secundaria);
+  --branco-quente: var(--branco);
+  --carvao: var(--apoio);
+  --ambar: var(--destaque);
+  --areia: var(--secundaria);
+  --on-ambar: var(--branco);
+
+  --petroleo-ch: var(--primaria-ch);
+  --petroleo-fundo-ch: var(--primaria-ch);
+  --petroleo-agua-ch: var(--secundaria-ch);
+  --branco-quente-ch: var(--branco-ch);
+  --carvao-ch: var(--apoio-ch);
+  --ambar-ch: var(--destaque-ch);
+  --areia-ch: var(--secundaria-ch);
+  --on-ambar-ch: var(--branco-ch);
 }
 
 /* Dark mode: redefine tokens — todos os componentes viram automaticamente */
 .dark {
-  --petroleo: #024D62;
-  --petroleo-fundo: #0A2E35;
-  --petroleo-agua: #15272C;
-  --branco-quente: #0E1416;
-  --carvao: #ECE7DC;
-  --ambar: #E6A02E;
-  --areia: #1E2629;
-  --on-ambar: #16201F;
+  --primaria: #8EB2E0;
+  --primaria-escura: #0B131E;
+  --primaria-clara: #4D6D9E;
+  --secundaria: #2D271D;
+  --destaque: #E6A02E;
+  --apoio: #D6D6D6;
+  --branco: #12161A;
 
-  --petroleo-ch: 2 77 98;
-  --petroleo-fundo-ch: 10 46 53;
-  --petroleo-agua-ch: 21 39 44;
-  --branco-quente-ch: 14 20 22;
-  --carvao-ch: 236 231 220;
-  --ambar-ch: 230 160 46;
-  --areia-ch: 30 38 41;
-  --on-ambar-ch: 22 32 31;
+  --primaria-ch: 142 178 224;
+  --primaria-escura-ch: 11 19 30;
+  --primaria-clara-ch: 77 109 158;
+  --secundaria-ch: 45 39 29;
+  --destaque-ch: 230 160 46;
+  --apoio-ch: 214 214 214;
+  --branco-ch: 18 22 26;
+
+  /* Legacy Mappings for Retrocompatibility in Dark Mode */
+  --petroleo: var(--primaria);
+  --petroleo-fundo: var(--primaria);
+  --petroleo-agua: var(--secundaria);
+  --branco-quente: var(--branco);
+  --carvao: var(--apoio);
+  --ambar: var(--destaque);
+  --areia: var(--secundaria);
+  --on-ambar: var(--branco);
+
+  --petroleo-ch: var(--primaria-ch);
+  --petroleo-fundo-ch: var(--primaria-ch);
+  --petroleo-agua-ch: var(--secundaria-ch);
+  --branco-quente-ch: var(--branco-ch);
+  --carvao-ch: var(--apoio-ch);
+  --ambar-ch: var(--destaque-ch);
+  --areia-ch: var(--secundaria-ch);
+  --on-ambar-ch: var(--branco-ch);
 }
 
 @layer base {
@@ -53,7 +86,7 @@
   body {
     background-color: var(--branco-quente);
     color: var(--carvao);
-    font-family: 'Satoshi', system-ui, sans-serif;
+    font-family: 'Montserrat', 'Inter', system-ui, sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     margin: 0;
@@ -161,3 +194,30 @@
     display: block;
   }
 }
+
+@layer components {
+  .btn {
+    @apply inline-flex items-center justify-center border border-primaria text-primaria px-8 py-5 text-xs font-bold tracking-widest uppercase rounded-full bg-transparent transition-all duration-500 cursor-pointer;
+  }
+  .btn:hover {
+    @apply bg-primaria text-branco;
+  }
+
+  .btn-destaque {
+    @apply inline-flex items-center justify-center border border-destaque text-destaque px-8 py-5 text-xs font-bold tracking-widest uppercase rounded-full bg-transparent transition-all duration-500 cursor-pointer;
+  }
+  .btn-destaque:hover {
+    background-color: var(--destaque);
+    color: var(--primaria-escura);
+  }
+
+  .btn-outline-white {
+    @apply inline-flex items-center justify-center border border-white text-white px-8 py-5 text-xs font-bold tracking-widest uppercase rounded-full bg-transparent transition-all duration-500 cursor-pointer;
+  }
+  .btn-outline-white:hover {
+    background-color: var(--destaque);
+    border-color: var(--destaque);
+    color: var(--primaria-escura);
+  }
+}
+

@@ -32,11 +32,11 @@ export default function SilkBackground() {
     const animate = () => {
       const { width, height } = canvas
 
-      // Gradiente em tons de branco-quente (#FAF8F3)
+      // Gradiente em tons de Bege Linho (--secundaria) e Branco
       const gradient = ctx.createLinearGradient(0, 0, width, height)
-      gradient.addColorStop(0, '#E8E5DF')
-      gradient.addColorStop(0.5, '#FAF8F3')
-      gradient.addColorStop(1, '#E8E5DF')
+      gradient.addColorStop(0, '#D9D2C3')
+      gradient.addColorStop(0.5, '#FFFFFF')
+      gradient.addColorStop(1, '#D9D2C3')
       ctx.fillStyle = gradient
       ctx.fillRect(0, 0, width, height)
 
@@ -66,10 +66,10 @@ export default function SilkBackground() {
           const rnd = noise(x, y)
           const intensity = Math.max(0, pattern - (rnd / 15.0) * noiseIntensity)
 
-          // Seda em tons quentes: escuro #E1DFDA → claro #FAF8F3
-          const r = Math.floor(225 + 25 * intensity)
-          const g = Math.floor(223 + 25 * intensity)
-          const b = Math.floor(218 + 25 * intensity)
+          // Seda em tons brand-specific: Bege Linho #D9D2C3 → Branco #FFFFFF
+          const r = Math.floor(217 + 38 * intensity)
+          const g = Math.floor(210 + 45 * intensity)
+          const b = Math.floor(195 + 60 * intensity)
 
           const index = (y * width + x) * 4
           if (index < data.length) {
