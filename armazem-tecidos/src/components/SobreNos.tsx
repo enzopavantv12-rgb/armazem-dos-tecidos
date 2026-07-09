@@ -65,8 +65,8 @@ export default function SobreNos() {
           >
             <div className="w-full h-full min-h-[400px] rounded-[32px] overflow-hidden shadow-xl border border-black/5 relative group">
               <img
-                src="./img/Foto equipe armazém.png"
-                alt="Equipe do Armazém dos Tecidos em Belo Horizonte"
+                src="./img/foto-hero-armazem-optimized.webp"
+                alt="Rolos de tecidos organizados na indústria da Armazém dos Tecidos"
                 className="absolute inset-0 w-full h-full object-cover object-center group-hover:scale-[1.02] transition-transform duration-700 ease-out"
                 loading="lazy"
               />

@@ -18,13 +18,13 @@ export default function CTAFinal() {
             className="font-display font-bold text-white leading-tight mb-7"
             style={{ fontSize: 'clamp(2rem, 4.5vw, 3.8rem)' }}
           >
-            O galpão está cheio.<br className="hidden sm:block" /> Seu pedido começa por aqui.
+            A indústria está cheia.<br className="hidden sm:block" /> Seu pedido começa por aqui.
           </h2>
         </AnimatedSection>
 
         <AnimatedSection delay={0.2}>
           <p className="text-petroleo-agua/65 text-lg leading-relaxed mb-12 max-w-[48ch] mx-auto">
-            Atacado por KG, retalhos e envio para todo o Brasil. Fale direto com o armazém pelo WhatsApp.
+            Atacado por metro e por quilo, retalhos e envio para todo o Brasil. Fale direto com o armazém pelo WhatsApp.
           </p>
         </AnimatedSection>
 

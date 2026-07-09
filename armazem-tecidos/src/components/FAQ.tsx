@@ -12,15 +12,15 @@ const faqs = [
   },
   {
     q: 'Vocês vendem por KG ou por metro?',
-    a: 'Depende da linha. Boa parte do atacado sai por KG com preço de galpão, e alguns tecidos também por metro. A gente te orienta na hora do pedido.',
+    a: 'Depende da linha. Boa parte do atacado sai por KG com preço de indústria, e alguns tecidos também por metro. A gente te orienta na hora do pedido.',
   },
   {
     q: 'Quais tecidos vocês trabalham?',
-    a: 'Tricoline, viscose, malha, brim e retalhos, nacionais e importados. Tudo no mesmo galpão.',
+    a: 'Tricoline, viscose, malha, brim e retalhos, nacionais e importados. Tudo na mesma indústria.',
   },
   {
     q: 'Vocês entregam para todo o Brasil?',
-    a: 'Sim. Enviamos do nosso galpão em Belo Horizonte para qualquer estado do país.',
+    a: 'Sim. Enviamos da nossa indústria em Belo Horizonte para qualquer estado do país.',
   },
   {
     q: 'Quais são as formas de pagamento?',
@@ -116,8 +116,8 @@ export default function FAQ() {
 
           <div className="mt-10">
             <img
-              src="./img/embalando.png"
-              alt="Equipe do Armazém dos Tecidos organizando pedidos no galpão"
+              src="./img/embalando.webp"
+              alt="Equipe do Armazém dos Tecidos organizando pedidos na indústria"
               loading="lazy"
               className="h-[420px] w-full rounded-tl-[100px] rounded-br-[100px] object-cover"
             />

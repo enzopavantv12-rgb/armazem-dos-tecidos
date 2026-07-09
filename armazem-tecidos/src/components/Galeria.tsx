@@ -2,19 +2,19 @@ import AnimatedSection from './AnimatedSection'
 
 const items = [
   {
-    src: './img/armazem-loop.gif',
-    alt: 'Movimento no galpão da Armazém dos Tecidos',
+    src: './img/armazem-loop.webp',
+    alt: 'Movimento na indústria da Armazém dos Tecidos',
   },
   {
-    src: './img/galeria-tricoline.jpg',
-    alt: 'Seção de Tricoline Lisa e Estampada no galpão',
+    src: './img/galeria-tricoline.webp',
+    alt: 'Seção de Tricoline Lisa e Estampada na indústria',
   },
   {
-    src: './img/galeria-brim.jpg',
+    src: './img/galeria-brim.webp',
     alt: 'Seção de Brim e Retalho de Brim organizados por cor',
   },
   {
-    src: './img/galeria-malha.jpg',
+    src: './img/galeria-malha.webp',
     alt: 'Seção de Malha Lisa e Estampada com rolos coloridos',
   },
 ]
@@ -33,7 +33,7 @@ export default function Galeria() {
               className="font-display font-bold text-carvao leading-tight"
               style={{ fontSize: 'clamp(1.9rem, 3.5vw, 3rem)' }}
             >
-              Um galpão cheio, pronto para o seu pedido
+              Uma indústria cheia, pronta para o seu pedido
             </h2>
           </div>
         </AnimatedSection>

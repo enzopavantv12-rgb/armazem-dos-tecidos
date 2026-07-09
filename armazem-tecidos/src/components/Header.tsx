@@ -1,143 +1,128 @@
-import { useState, useEffect } from 'react'
-import { Menu, X } from 'lucide-react'
+import { useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { AnimatedThemeToggle } from './ui/AnimatedThemeToggle'
 
-const WA_URL = 'https://wa.me/5531998338543?text=Ol%C3%A1!%20Vim%20pelo%20site%20e%20quero%20comprar%20tecidos%20no%20atacado.'
-
-const navLinks = [
-  { href: '#tecidos', label: 'Tecidos' },
-  { href: '#diferenciais', label: 'O Armazém' },
-  { href: '#como-comprar', label: 'Como Comprar' },
-  { href: '#contato', label: 'Contato' },
-]
+const WA_URL =
+  'https://wa.me/5531998338543?text=Ol%C3%A1!%20Vim%20pelo%20site%20da%20Armaz%C3%A9m%20dos%20Tecidos%20e%20gostaria%20de%20falar%20com%20um%20especialista%20para%20conhecer%20as%20melhores%20oportunidades%20de%20compra.'
 
 export default function Header() {
   const [open, setOpen] = useState(false)
-  const [scrolled, setScrolled] = useState(false)
-
-  useEffect(() => {
-    const handler = () => setScrolled(window.scrollY > 80)
-    window.addEventListener('scroll', handler, { passive: true })
-    handler()
-    return () => window.removeEventListener('scroll', handler)
-  }, [])
 
   return (
-    <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ease-in-out ${
-        scrolled
-          ? 'bg-branco-quente/90 backdrop-blur-md border-b border-carvao/10 shadow-sm'
-          : 'bg-transparent border-b border-white/10'
-      }`}
-    >
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between h-16">
-
-        <a href="#" className="flex items-center" aria-label="ARMAZEM TECIDOS — página inicial">
-          <img
-            src="./img/logos/Logo-armazem-branca.png"
-            alt="Armazém dos Tecidos"
-            className={`h-8 w-auto transition-all duration-300 ${
-              scrolled ? 'hidden dark:block' : 'block'
-            }`}
-          />
-          <img
-            src="./img/logos/Logo-armazem-preta.png"
-            alt="Armazém dos Tecidos"
-            className={`h-8 w-auto transition-all duration-300 ${
-              scrolled ? 'block dark:hidden' : 'hidden'
-            }`}
-          />
-        </a>
-
-        <nav className="hidden md:flex items-center gap-7" aria-label="Navegação principal">
-          {navLinks.map(link => (
-            <a
-              key={link.href}
-              href={link.href}
-              className={`text-sm font-medium transition-colors duration-500 ${
-                scrolled
-                  ? 'text-carvao/70 hover:text-petroleo'
-                  : 'text-white/70 hover:text-white'
-              }`}
-            >
-              {link.label}
-            </a>
-          ))}
-        </nav>
-
-        <div className="flex items-center gap-3">
-          <AnimatedThemeToggle
-            className={`h-10 w-10 ${scrolled ? 'border-carvao/20 text-carvao hover:bg-carvao/5' : 'border-white/40 text-white hover:bg-white/10'}`}
-          />
-          <a
-            href={WA_URL}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="hidden md:flex items-center gap-2 bg-ambar text-on-ambar text-sm font-medium px-4 py-2 rounded-full hover:bg-ambar/90 transition-colors focus:outline-none focus:ring-2 focus:ring-ambar focus:ring-offset-2"
-            aria-label="Falar no WhatsApp"
-          >
-            <img src="./icones_social/whatsapp%20(1).svg" alt="" aria-hidden="true" className="w-[15px] h-[15px]" />
-            WhatsApp
+    <>
+      <header className="site-header">
+        <div className="site-header__inner">
+          <a href="#" className="logo" aria-label="Armazém dos Tecidos — início">
+            <img src="./img/logos/armazem-logo-1.png" alt="" className="logo__mark" />
+            <span className="logo__type">
+              <strong>ARMAZÉM</strong>
+              <small>dos tecidos</small>
+            </span>
           </a>
 
-          <img
-            src="./icones_social/brasilia.svg"
-            alt="Idioma: português (Brasil)"
-            className="hidden md:block h-5 w-7 rounded-sm shadow-sm"
-          />
+          <nav className="site-nav">
+            <a href="#tecidos">Tecidos</a>
+            <a href="#diferenciais">O Armazém</a>
+            <a href="#como-comprar">Como Comprar</a>
+            <a href="#contato">Contato</a>
+          </nav>
+
+          <div className="site-header__actions">
+            <AnimatedThemeToggle className="theme-toggle" />
+            
+            <a className="btn-whatsapp" href={WA_URL} target="_blank" rel="noopener noreferrer">
+              <img src="./icones_social/whatsapp%20(1).svg" alt="" aria-hidden="true" className="w-[15px] h-[15px]" />
+              <span>WhatsApp</span>
+            </a>
+            
+            <img
+              src="./icones_social/brasilia.svg"
+              alt="Idioma: português (Brasil)"
+              className="lang-flag h-5 w-7 rounded-sm shadow-sm"
+            />
+          </div>
 
           <button
-            className={`md:hidden p-2 transition-colors duration-500 focus:outline-none focus:ring-2 focus:ring-ambar ${
-              scrolled ? 'text-carvao hover:text-petroleo' : 'text-white hover:text-white/80'
-            }`}
+            className={`nav-toggle ${open ? 'is-open' : ''}`}
             onClick={() => setOpen(!open)}
             aria-label={open ? 'Fechar menu' : 'Abrir menu'}
             aria-expanded={open}
+            type="button"
           >
-            {open ? <X size={22} aria-hidden="true" /> : <Menu size={22} aria-hidden="true" />}
+            <span></span>
+            <span></span>
+            <span></span>
           </button>
         </div>
-      </div>
+      </header>
 
-      {/* Mobile menu */}
+      {/* Mobile Drawer (Breakpoint: 900px) */}
       <AnimatePresence>
         {open && (
           <motion.div
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: 'auto' }}
             exit={{ opacity: 0, height: 0 }}
-            transition={{ duration: 0.22 }}
-            className="md:hidden overflow-hidden bg-petroleo-fundo/96 backdrop-blur-md border-t border-white/10"
+            transition={{ duration: 0.25, ease: 'easeInOut' }}
+            className="min-[901px]:hidden fixed top-[var(--header-height)] left-0 right-0 z-40 overflow-hidden bg-primaria-escura border-b border-white/10 shadow-lg"
           >
-            <div className="px-4 pb-6 pt-4">
-              <nav className="flex flex-col gap-5 mb-6" aria-label="Navegação mobile">
-                {navLinks.map(link => (
-                  <a
-                    key={link.href}
-                    href={link.href}
-                    className="text-base font-medium text-white/70 hover:text-ambar transition-colors"
-                    onClick={() => setOpen(false)}
-                  >
-                    {link.label}
-                  </a>
-                ))}
+            <div className="px-6 py-6 flex flex-col gap-6">
+              <nav className="flex flex-col gap-4">
+                <a
+                  href="#tecidos"
+                  className="text-white/80 hover:text-destaque text-sm font-medium transition-colors"
+                  onClick={() => setOpen(false)}
+                >
+                  Tecidos
+                </a>
+                <a
+                  href="#diferenciais"
+                  className="text-white/80 hover:text-destaque text-sm font-medium transition-colors"
+                  onClick={() => setOpen(false)}
+                >
+                  O Armazém
+                </a>
+                <a
+                  href="#como-comprar"
+                  className="text-white/80 hover:text-destaque text-sm font-medium transition-colors"
+                  onClick={() => setOpen(false)}
+                >
+                  Como Comprar
+                </a>
+                <a
+                  href="#contato"
+                  className="text-white/80 hover:text-destaque text-sm font-medium transition-colors"
+                  onClick={() => setOpen(false)}
+                >
+                  Contato
+                </a>
               </nav>
-              <a
-                href={WA_URL}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex items-center justify-center gap-2 bg-ambar text-on-ambar font-medium px-4 py-3 w-full rounded-full hover:bg-ambar/90 transition-colors"
-                aria-label="Falar no WhatsApp"
-                onClick={() => setOpen(false)}
-              >
-                <img src="./icones_social/whatsapp%20(1).svg" alt="" aria-hidden="true" className="w-4 h-4" />
-                Falar no WhatsApp
-              </a>
+              <div className="flex items-center justify-between pt-4 border-t border-white/5 gap-4">
+                <a
+                  className="btn-whatsapp flex items-center justify-center gap-2 bg-destaque text-primaria-escura font-bold py-3 px-6 rounded-full text-xs hover:brightness-108 transition-all flex-1"
+                  href={WA_URL}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  onClick={() => setOpen(false)}
+                >
+                  <img src="./icones_social/whatsapp%20(1).svg" alt="" aria-hidden="true" className="w-[15px] h-[15px]" />
+                  <span>WhatsApp</span>
+                </a>
+                
+                {/* Visual items like theme toggle for quick mobile access */}
+                <div className="flex items-center gap-3">
+                  <AnimatedThemeToggle className="theme-toggle flex min-[901px]:hidden" />
+                  <img
+                    src="./icones_social/brasilia.svg"
+                    alt="Idioma: português (Brasil)"
+                    className="h-5 w-7 rounded-sm shadow-sm"
+                  />
+                </div>
+              </div>
             </div>
           </motion.div>
         )}
       </AnimatePresence>
-    </header>
+    </>
   )
 }

@@ -13,35 +13,35 @@ const categories: Category[] = [
     name: 'Tricoline',
     sub: 'Lisa e Estampada',
     desc: 'Tecido plano de algodão. Versatilidade para confecção, estamparia e moda casual.',
-    photo: './img/galeria-tricoline.jpg',
+    photo: './img/galeria-tricoline.webp',
     color: 'bg-petroleo-agua',
   },
   {
     name: 'Malha',
     sub: 'Lisa e Estampada',
     desc: 'Conforto e elasticidade. Base para moda casual, fitness e peças femininas.',
-    photo: './img/galeria-malha.jpg',
+    photo: './img/galeria-malha.webp',
     color: 'bg-areia',
   },
   {
     name: 'Brim',
     sub: 'Lisa e Retalho',
     desc: 'Resistência e estrutura. Para uniformes, peças industriais e produção em escala.',
-    photo: './img/galeria-brim.jpg',
+    photo: './img/galeria-brim.webp',
     color: 'bg-petroleo/10',
   },
   {
     name: 'Viscose',
     sub: 'Diversas composições',
     desc: 'Leveza e caimento para peças femininas, vestidos e coleções com volume.',
-    photo: './img/viscose.png',
+    photo: './img/viscose.webp',
     color: 'bg-areia',
   },
   {
     name: 'Retalhos',
     sub: 'Por KG',
     desc: 'Aproveitamento máximo. Retalhos de qualidade para artesanato, patchwork e costura criativa.',
-    photo: './img/tecidos%202.png',
+    photo: './img/tecidos 2.webp',
     color: 'bg-petroleo-agua',
   },
 ]
@@ -49,22 +49,23 @@ const categories: Category[] = [
 function CategoryCard({ cat, index }: { cat: Category; index: number }) {
   return (
     <AnimatedSection delay={index * 0.07}>
-      <div className="flex flex-col overflow-hidden rounded-3xl border border-carvao/8 bg-branco-quente shadow-sm">
+      <div className="flex flex-col overflow-hidden rounded-3xl border border-carvao/8 bg-branco-quente shadow-sm product-card category-card transition-all duration-300">
 
         {/* Imagem com curva elíptica na base — padrão WelcomeScreen */}
         {cat.photo ? (
-          <img
-            src={cat.photo}
-            alt={`${cat.name} — ${cat.sub}`}
-            loading="lazy"
-            width="600"
-            height="450"
-            className="h-52 w-full object-cover"
-            style={{ clipPath: 'ellipse(100% 60% at 50% 40%)' }}
-          />
+          <div className="product-card__media h-52 w-full overflow-hidden" style={{ clipPath: 'ellipse(100% 60% at 50% 40%)' }}>
+            <img
+              src={cat.photo}
+              alt={`${cat.name} — ${cat.sub}`}
+              loading="lazy"
+              width="600"
+              height="450"
+              className="h-full w-full object-cover transition-transform duration-500"
+            />
+          </div>
         ) : (
           <div
-            className={`h-52 w-full ${cat.color} flex items-center justify-center`}
+            className={`product-card__media h-52 w-full ${cat.color} flex items-center justify-center`}
             style={{ clipPath: 'ellipse(100% 60% at 50% 40%)' }}
           >
             <span className="font-display font-bold text-petroleo/20 text-7xl">
@@ -106,11 +107,11 @@ export default function Tecidos() {
                 className="font-display font-bold text-carvao leading-tight"
                 style={{ fontSize: 'clamp(1.9rem, 3.5vw, 3rem)' }}
               >
-                Variedade de linhas, tudo por KG
+                Ampla variedade de linhas, com opções por metro e por quilo.
               </h2>
             </div>
             <p className="text-carvao/60 text-sm md:text-base max-w-[38ch] md:text-right leading-relaxed">
-              Galpão com múltiplas linhas organizadas. Você escolhe, a gente separa e envia.
+              Indústria com múltiplas linhas organizadas. Você escolhe, a gente separa e envia.
             </p>
           </div>
         </AnimatedSection>

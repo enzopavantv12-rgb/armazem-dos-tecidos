@@ -49,10 +49,10 @@ export default function Contato() {
         {/* Imagem com recorte orgânico — esquerda no desktop, depois no mobile */}
         <div className="order-2 lg:order-1">
           <img
-            src="./img/Foto equipe armazém.png"
-            alt="Equipe do Armazém dos Tecidos no galpão em Belo Horizonte"
-            loading="lazy"
+            src="./img/Foto%20equipe%20armaz%C3%A9m.webp"
+            alt="Equipe da Armazém dos Tecidos na indústria em Belo Horizonte"
             className="h-[520px] w-full object-cover object-center rounded-tl-[130px] rounded-tr-[130px] rounded-br-[130px] rounded-bl-[40px]"
+            loading="lazy"
           />
         </div>
 
