@@ -116,7 +116,7 @@ export default function FAQ() {
 
           <div className="mt-10">
             <img
-              src="./img/embalando.webp"
+              src="./img/imagem%20FAQ%20armaz%C3%A9m.jpeg"
               alt="Equipe do Armazém dos Tecidos organizando pedidos na indústria"
               loading="lazy"
               className="h-[420px] w-full rounded-tl-[100px] rounded-br-[100px] object-cover"

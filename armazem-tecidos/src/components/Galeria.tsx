@@ -113,7 +113,7 @@ export default function Galeria() {
                 <img src="./icones_social/instagram.svg" alt="" aria-hidden="true" className="h-4 w-4 brightness-0 invert" />
               </span>
               <span className="font-mono text-xs uppercase tracking-[0.18em] text-carvao/80">
-                @armazemdostecidos_ · 20,9 mil seguidores
+                @armazemdostecidos_ · 21 mil seguidores
               </span>
             </a>
           </div>

@@ -18,13 +18,13 @@ export default function CTAFinal() {
             className="font-display font-bold text-white leading-tight mb-7"
             style={{ fontSize: 'clamp(2rem, 4.5vw, 3.8rem)' }}
           >
-            A indústria está cheia.<br className="hidden sm:block" /> Seu pedido começa por aqui.
+            Mais que uma empresa,<br className="hidden sm:block" /> um parceiro de oportunidades para o seu negócio.
           </h2>
         </AnimatedSection>
 
         <AnimatedSection delay={0.2}>
-          <p className="text-petroleo-agua/65 text-lg leading-relaxed mb-12 max-w-[48ch] mx-auto">
-            Atacado por metro e por quilo, retalhos e envio para todo o Brasil. Fale direto com o armazém pelo WhatsApp.
+          <p className="text-petroleo-agua/65 text-lg leading-relaxed mb-12 max-w-[54ch] mx-auto">
+            Tecidos para todos os negócios. Atacado e Varejo com condições especiais e envio para todo o Brasil. Entre em contato pelo WhatsApp e descubra um mundo de oportunidades.
           </p>
         </AnimatedSection>
 

@@ -105,9 +105,9 @@ export default function Tecidos() {
               </p>
               <h2
                 className="font-display font-bold text-carvao leading-tight"
-                style={{ fontSize: 'clamp(1.9rem, 3.5vw, 3rem)' }}
+                style={{ fontSize: 'clamp(1.6rem, 2.8vw, 2.2rem)' }}
               >
-                Ampla variedade de linhas, com opções por metro e por quilo.
+                Grande variedade de produtos, atendendo suas necessidades com opções de compra por metro ou por quilo.
               </h2>
             </div>
             <p className="text-carvao/60 text-sm md:text-base max-w-[38ch] md:text-right leading-relaxed">
@@ -116,7 +116,7 @@ export default function Tecidos() {
           </div>
         </AnimatedSection>
 
-        <div className="grid grid-cols-2 md:grid-cols-3 gap-6 md:gap-8">
+        <div className="tecidos-grid">
           {categories.map((cat, i) => (
             <CategoryCard key={cat.name} cat={cat} index={i} />
           ))}

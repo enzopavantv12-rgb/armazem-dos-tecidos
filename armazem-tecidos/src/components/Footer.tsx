@@ -53,7 +53,7 @@ export default function Footer() {
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center gap-2.5 text-sm text-white/65 hover:text-ambar transition-colors focus:outline-none focus:ring-2 focus:ring-ambar"
-                aria-label="Instagram: @armazemdostecidos_ (20,9 mil seguidores)"
+                aria-label="Instagram: @armazemdostecidos_ (21 mil seguidores)"
               >
                 <img src="./icones_social/instagram.svg" alt="" aria-hidden="true" className="w-[14px] h-[14px]" />
                 @armazemdostecidos_
@@ -77,7 +77,7 @@ export default function Footer() {
             © 2025 Armazem dos Tecidos · Todos os direitos reservados
           </p>
           <p className="font-mono text-[10px] text-white/20 tracking-wider">
-            BH, MG · Instagram: 20,9 mil seguidores
+            BH, MG · Instagram: 21 mil seguidores
           </p>
         </div>
       </div>

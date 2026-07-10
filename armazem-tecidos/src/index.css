@@ -468,5 +468,26 @@
 }
 .site-nav a:hover::after { width: 100%; }
 
-
-
+/* ---------- TECIDOS GRID (FLEXWRAP & ALIGNMENT) ---------- */
+.tecidos-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 24px;
+}
+@media (min-width: 768px) {
+  .tecidos-grid {
+    gap: 32px;
+  }
+}
+/* Aligns CategoryCard wrappers under the flexbox container */
+.tecidos-grid > div {
+  flex: 0 1 calc(50% - 12px);
+  min-width: 140px;
+  max-width: 360px;
+}
+@media (min-width: 768px) {
+  .tecidos-grid > div {
+    flex: 0 1 calc(33.333% - 22px);
+  }
+}

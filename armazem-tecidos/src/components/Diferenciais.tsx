@@ -26,7 +26,7 @@ function AnimatedCounter({
       if (!startTimestamp) startTimestamp = timestamp
       const progress = Math.min((timestamp - startTimestamp) / duration, 1)
       const eased = 1 - Math.pow(1 - progress, 3) // cubic ease-out
-      setCount(Math.floor(eased * target))
+      setCount(target === 1 ? (eased >= 0.5 ? 1 : 0) : Math.floor(eased * target))
       if (progress < 1) {
         window.requestAnimationFrame(step)
       } else {
@@ -47,9 +47,9 @@ function AnimatedCounter({
 
 const stats = [
   { target: 30, prefix: '+', suffix: ' anos', label: 'de mercado' },
-  { target: 35, prefix: '', suffix: '', label: 'colaboradores' },
+  { target: 57, prefix: '+', suffix: '', label: 'representantes pelo Brasil' },
   { target: 27, prefix: '', suffix: ' estados', label: 'atendidos em todo o Brasil' },
-  { target: 10000, prefix: '+', suffix: ' m/mês', label: 'no maior cliente ativo' },
+  { target: 1, prefix: '+', suffix: ' milhão', label: 'de metros de tecidos' },
 ]
 
 export default function Diferenciais() {
@@ -57,7 +57,7 @@ export default function Diferenciais() {
   const isInView = useInView(containerRef, { once: true, amount: 0.1 })
 
   return (
-    <section className="py-12 md:py-16 bg-secundaria/10 dark:bg-secundaria/5" id="stats">
+    <section className="py-12 md:py-16 bg-secundaria/10 dark:bg-secundaria/5" id="diferenciais">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8" ref={containerRef}>
         
         {/* Barra de números/estatísticas */}
@@ -72,8 +72,8 @@ export default function Diferenciais() {
           
           <div className="relative z-10 w-full grid grid-cols-2 lg:grid-cols-4 gap-8 md:gap-12 text-center divide-y lg:divide-y-0 lg:divide-x divide-white/10">
             {stats.map((stat, i) => (
-              <div key={i} className={`flex flex-col items-center justify-center p-4 ${i >= 2 ? 'pt-8 lg:pt-4' : 'pt-4'}`}>
-                <span className="font-sans font-bold text-3xl md:text-4xl lg:text-5xl text-destaque mb-3 leading-none block">
+              <div key={i} className={`flex flex-col items-center justify-start p-4 ${i >= 2 ? 'pt-8 lg:pt-4' : 'pt-4'}`}>
+                <span className="font-sans font-bold text-3xl md:text-4xl text-destaque mb-3 leading-none block whitespace-nowrap">
                   <AnimatedCounter target={stat.target} prefix={stat.prefix} suffix={stat.suffix} />
                 </span>
                 <span className="font-sans text-xs md:text-sm font-medium uppercase tracking-wider text-white/80 max-w-[200px]">
@@ -88,4 +88,3 @@ export default function Diferenciais() {
     </section>
   )
 }
-

@@ -40,7 +40,7 @@ export default function SobreNos() {
                 Com o passar dos anos, a empresa ampliou seu portfólio, passando a trabalhar com tecidos nacionais e importados, sempre mantendo como pilares a qualidade dos produtos, a pronta entrega e a confiança nas relações comerciais.
               </p>
               <p>
-                Hoje, com uma equipe de 35 colaboradores, showroom físico, estoque próprio e atendimento para todo o Brasil, a Armazém dos Tecidos segue ajudando lojistas, confecções e revendedores a crescerem por meio de produtos de qualidade, preços justos e um relacionamento construído com confiança.
+                Hoje, com uma equipe qualificada, showroom físico, estoque próprio e atendimento para todo o Brasil, a Armazém dos Tecidos segue ajudando lojistas, confecções e revendedores a crescerem por meio de produtos de qualidade, preços justos e um relacionamento construído com confiança.
               </p>
             </div>
 
@@ -65,7 +65,7 @@ export default function SobreNos() {
           >
             <div className="w-full h-full min-h-[400px] rounded-[32px] overflow-hidden shadow-xl border border-black/5 relative group">
               <img
-                src="./img/foto-hero-armazem-optimized.webp"
+                src="./img/imagem%20sobre%20n%C3%B3s%20armaz%C3%A9m.jpeg"
                 alt="Rolos de tecidos organizados na indústria da Armazém dos Tecidos"
                 className="absolute inset-0 w-full h-full object-cover object-center group-hover:scale-[1.02] transition-transform duration-700 ease-out"
                 loading="lazy"
