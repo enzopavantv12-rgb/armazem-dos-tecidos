@@ -10,7 +10,8 @@ async function run() {
     const start = Date.now();
 
     await sharp(inputPath, { animated: true })
-      .webp({ quality: 65, effort: 6 }) // quality 65, effort 6 (max compression)
+      .resize(320, 400) // Resize to 320x400
+      .webp({ quality: 50, effort: 6 })
       .toFile(outputPath);
 
     const end = Date.now();
