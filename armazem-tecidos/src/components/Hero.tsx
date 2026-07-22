@@ -47,7 +47,7 @@ export default function Hero() {
           initial={{ opacity: 0, scale: 1.05 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 1.2, ease: [0.25, 0.1, 0.25, 1] }}
-          src="./img/Foto%20equipe%20armaz%C3%A9m.webp"
+          src="./img/hero%20armaz%C3%A9m%20dos%20tecidos.jpeg"
           alt="Equipe da Armazém dos Tecidos na indústria em Belo Horizonte"
           className="hero__image"
           loading="eager"
